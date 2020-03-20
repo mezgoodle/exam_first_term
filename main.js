@@ -1,10 +1,5 @@
 'use strict';
 
-/*
-const timer = new Timer();
-timer.schedule('1h 18s', callback);
-*/
-
 const mult = {
     h: 3600,
     m: 60,
@@ -20,10 +15,8 @@ const fromStringtoSeconds = (timeInput) => {
         const lastElement = element.slice(-1);
         timeInSeconds += v * mult[lastElement];
     });
-
     return timeInSeconds;
-    
-}
+};
 
 class Timer{
     constructor(){
@@ -34,11 +27,10 @@ class Timer{
         const time = fromStringtoSeconds(timeInput);
         const result = setTimeout(callback, time * 1000);
         const array = this.events.get(callback);
-        if (array) {
+        if (array)
             array.push(result);
-        } else {
+        else
             this.events.set(callback, [result]);
-        }
     }
 
     remove(callback) {
@@ -50,12 +42,12 @@ class Timer{
     
 }
 
-//Calback
+// Calback
 const fn = () => {
     console.log('Callback from timer');
   };
 
-//Usage
+// Usage
 const timer = new Timer();
 
 // timer.schedule('1h 18s', fn);

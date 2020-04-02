@@ -1,16 +1,16 @@
-'use strict';
+"use strict";
 
 const mult = {
     h: 3600,
     m: 60,
     s: 1,
-}
+};
 
 const fromStringtoSeconds = (timeInput) => {
     let timeInSeconds = 0;
-    const temp = timeInput.split(' ');
+    const temp = timeInput.split(" ");
     // console.log(temp);
-    temp.forEach(element => {
+    temp.forEach((element) => {
         const v = parseFloat(element, 10);
         const lastElement = element.slice(-1);
         timeInSeconds += v * mult[lastElement];
@@ -27,10 +27,12 @@ class Timer{
         const time = fromStringtoSeconds(timeInput);
         const result = setTimeout(callback, time * 1000);
         const array = this.events.get(callback);
-        if (array)
+        if (array) {
             array.push(result);
-        else
+        }
+        else {
             this.events.set(callback, [result]);
+        }
     }
 
     remove(callback) {
@@ -44,7 +46,7 @@ class Timer{
 
 // Calback
 const fn = () => {
-    console.log('Callback from timer');
+    console.log("Callback from timer");
   };
 
 // Usage
@@ -52,6 +54,6 @@ const timer = new Timer();
 
 // timer.schedule('1h 18s', fn);
 // timer.schedule('5m', fn);
-timer.schedule('5s', fn);
-timer.schedule('5.0s', fn);
+timer.schedule("5s", fn);
+timer.schedule("5.0s", fn);
 timer.remove(fn);

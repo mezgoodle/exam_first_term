@@ -1,4 +1,4 @@
-# Welcome to KPI!
+# Welcome to KPI
 
 This is my code for passing exam from Basics of Programming in the first term.
 

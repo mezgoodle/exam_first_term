@@ -13,7 +13,7 @@ const fromStringtoSeconds = (timeInput) => {
     temp.forEach((element) => {
         const v = parseFloat(element, 10);
         const lastElement = element.slice(-1);
-        timeInSeconds += v * mult[lastElement];
+        timeInSeconds += v * mult[lastElement.toString()];
     });
     return timeInSeconds;
 };
@@ -37,7 +37,7 @@ class Timer{
 
     remove(callback) {
         const result = this.events.get(callback);
-        result.forEach(element => {
+        result.forEach((element) => {
             clearTimeout(element);
         });
     }
@@ -46,7 +46,10 @@ class Timer{
 
 // Calback
 const fn = () => {
-    console.log("Callback from timer");
+    /* eslint no-console: "error" */
+    
+    // custom console
+    Console.log("Callback from timer");
   };
 
 // Usage

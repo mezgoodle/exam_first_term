@@ -46,10 +46,7 @@ class Timer{
 
 // Calback
 const fn = () => {
-    /* eslint no-console: "error" */
-    
-    // custom console
-    Console.log("Callback from timer");
+    console.log("Callback from timer");
   };
 
 // Usage

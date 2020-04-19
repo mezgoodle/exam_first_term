@@ -14,10 +14,3 @@ node main.js
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 Please make sure to update tests as appropriate.
-
-## Note
-You can see
-```js 
-Console.log("Callback from timer");
-```
-This is for fixing eslint error "no-console"
